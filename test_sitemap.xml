@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
+    <url>
+        <loc>/a</loc>
+        <mobile:mobile/>
+    </url>
+    <url>
+        <loc>/a/a</loc>
+        <mobile:mobile/>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>/a/b</loc>
+        <lastmod>2013-08-27T15:42:30-07:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>/b</loc>
+    </url>
+    <url>
+        <loc>/b/a</loc>
+    </url>
+    <url>
+        <loc>/b/b</loc>
+    </url>
+</urlset>
