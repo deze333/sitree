@@ -2,7 +2,6 @@ package sitree
 
 import (
     "bytes"
-    "errors"
     "io"
     "os"
     "text/template"
@@ -14,7 +13,7 @@ import (
 
 var _tplTxt = `
 <?xml version="1.0" encoding="UTF-8" ?>
- <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
 {{range .Branches}}
     {{range .Leafs}}
@@ -43,9 +42,11 @@ var _tpl = template.Must(template.New("sitemap").Parse(_tplTxt))
 // Generates sitemap file. First creates a temporary file,
 // then replaces requested file with temporary.
 func (t *Tree) GenerateSitemap(fpath string) (err error) {
+	/* Allow empty sitemaps
     if t.Size() == 0 {
         return errors.New("Sitemap is empty, generation skipped")
     }
+	*/
     
     wr := &SitemapWriter{}
     if err = wr.CreateFile(fpath); err != nil {
